@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tickets</title>
+    <title>Reporte de Fallas</title>
+    <link rel="stylesheet" href="./Styles/Formulario.css">
+    <link rel="shortcut icon" href="./Assets/ICONO ANACSOFT 48 SIN TRASNSF.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-    
+    <section id="ImagenEncabezado">
+        <img class="Logo" src="./Assets/ANACSOFT  horizontal trasnparencia.png" alt="">
+    </section>
+    <section id="Formulario">
+        <form name="formulario" method="post" enctype="multipart/form-data">
+            <h1 class="FormularioTitulo"> Reportar un Error </h1>
+            <div>
+                <input class="FormularioInput" type="text" placeholder="Nombre(s)" name="Nombre" id="Nombre">
+                <input class="FormularioInput" type="text" placeholder="Email" name="Email" id="Email">
+                <input class="FormularioInput" type="number" placeholder="Celular" name="Celular" id="Celular">
+                <input class="FormularioInput" type="text" placeholder="Asunto" name="Asunto" id="Asunto">
+                <textarea class="FormularioTextArea" placeholder="Detalle del Error" name="Mensaje"
+                    id="Mensaje"></textarea>
+                <input class="FormularioFiles" type="file" multiple name="Archivos" id="Archivos">
+                <input class="FormularioEnviar" type="submit" name="Enviar" value="Enviar">
+            </div>
+        </form>
+    </section>
 </body>
+
 </html>
