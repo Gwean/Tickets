@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="./Styles/Formulario.css">
     <script src="Scripts/send.js"></script>
     <link rel="shortcut icon" href="./Assets/ICONO ANACSOFT 48 SIN TRASNSF.png" type="image/x-icon">
+    <link rel="stylesheet" href="./Styles/EnvioAnimacion.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload="showFormOnly()">
     <section id="ImagenEncabezado">
         <img class="Logo" src="./Assets/ANACSOFT  horizontal trasnparencia.png" alt="">
     </section>
@@ -35,6 +36,27 @@
             </div>
         </form>
     </section>
+
+    <section id="ElementosEnvio" onload="myFunction()">
+       
+        <div id="loaderContainer">
+            <div id="loader">
+            </div>
+            <h1 class="EnviandoText">Enviando...</h1>
+        </div>
+
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player class="Success"
+                src="https://assets3.lottiefiles.com/datafiles/8UjWgBkqvEF5jNoFcXV4sdJ6PXpS6DwF7cK4tzpi/Check Mark Success/Check Mark Success Data.json"
+                background="transparent" speed="0.75" autoplay>
+            </lottie-player>
+            <h1 class="EnviandoText">Reporte Enviado!</h1>
+        </div>
+    </section>
+
+
 </body>
+
 
 </html>
