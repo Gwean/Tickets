@@ -9,7 +9,6 @@
     <script src="Scripts/send.js"></script>
     <link rel="shortcut icon" href="./Assets/ICONO ANACSOFT 48 SIN TRASNSF.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -17,17 +16,24 @@
         <img class="Logo" src="./Assets/ANACSOFT  horizontal trasnparencia.png" alt="">
     </section>
     <section id="Formulario">
+        <form action="" method="post">
             <h1 class="FormularioTitulo"> Reportar un Error </h1>
             <div>
-                <input class="FormularioInput" type="text" placeholder="Nombre(s)" name="Nombre" id="Nombre">
-                <input class="FormularioInput" type="text" placeholder="Email" name="Email" id="Email">
-                <input class="FormularioInput" type="number" placeholder="Celular" name="Celular" id="Celular">
-                <input class="FormularioInput" type="text" placeholder="Asunto" name="Asunto" id="Asunto">
-                <textarea class="FormularioTextArea" placeholder="Detalle del Error" name="Mensaje"
-                    id="Mensaje"></textarea>
+                <input class="FormularioInput" type="text" placeholder="Nombre(s)" name="Nombre" id="Nombre" required>
+                <input class="FormularioInput" type="text" placeholder="Email" name="Email" id="Email" required>
+                <input class="FormularioInput" type="number" placeholder="Celular" name="Celular" id="Celular" required>
+                <input class="FormularioInput" type="text" placeholder="Breve Descripcion del Error" name="Asunto"
+                    id="Asunto" required>
+                <textarea class="FormularioTextArea" placeholder="Detalle del Error:
+                -Qué estaba Haciendo?
+                -Con qué Usuario?
+                -Qué Cliente tuvo el Problema?
+                -Nro de Registro" name="Mensaje" id="Mensaje" required></textarea>
+                <p class="FormularioFilesText">Manda una Foto del Error:</p>
                 <input class="FormularioFiles" type="file" multiple name="Archivos" id="Archivos">
                 <input class="FormularioEnviar" type="button" onclick="send()" name="Enviar" value="Enviar" id="Enviar">
             </div>
+        </form>
     </section>
 </body>
 

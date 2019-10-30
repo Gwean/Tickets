@@ -24,18 +24,24 @@ html{
     margin: 2% 5% 2% 5%;
     height: 2em;
     border: none;
-    border-bottom: 1px solid #a1a1a1;
+    border-bottom: 1px solid ;
 }
 
 .FormularioTextArea{
+    font-size: 17px;
     width: 86% ;
     margin: 2% 5% 2% 5%;
     padding: 2%;
-    text-align: center;
-    height: 2em;
+    text-align: start;
+    height: 7em;
 }
 .FormularioFiles{
     font-size: 17px;
+}
+.FormularioFilesText{
+    font-size: 20px;
+    margin-left: 5%;
+    color: #8B7575;
 }
 .FormularioEnviar{
     background-color: #0077FF;
@@ -50,3 +56,4 @@ html{
 .FormularioEnviar:hover{
 opacity: 0.75;
 }
+
