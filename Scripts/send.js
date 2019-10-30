@@ -1,3 +1,4 @@
+
 function send(){
     var http = new XMLHttpRequest();
     var url = "http://192.168.15.119:5000/send";
@@ -6,18 +7,16 @@ function send(){
     var celular = document.getElementById('Celular').value;
     var asunto = document.getElementById('Asunto').value;
     var mensaje = document.getElementById('Mensaje').value;
-    var archivos = document.getElementById('Archivos').value;
+    var archivos = document.getElementById('Archivos').files[0];
     http.open("POST", url, true);
-    http.setRequestHeader("Access-Control-Allow-Origin", "*");
-    http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    http.setRequestHeader("X-API-Key", "DC0626B2B448D748889A17C90C3E0355");
-    
+
     http.onreadystatechange = function() {
         if(http.readyState == 4 && http.status == 200) { 
            //aqui obtienes la respuesta de tu peticion
            alert(http.responseText);
         }
     }
+    form = new FormData();
     let x = JSON.stringify({
         "name": nombre,
         "email": email,
@@ -25,6 +24,8 @@ function send(){
         "subject": asunto,
         "message": mensaje,
     });
+    form.append("data",x)
+    form.append("file",archivos)
     console.log(x);
-    http.send(x);
+    http.send(form);
 }
