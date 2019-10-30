@@ -32,7 +32,7 @@ html{
     width: 86% ;
     margin: 2% 5% 2% 5%;
     padding: 2%;
-    text-align: start;
+    text-align: center;
     height: 7em;
 }
 .FormularioFiles{
@@ -40,8 +40,8 @@ html{
 }
 .FormularioFilesText{
     font-size: 20px;
-    margin-left: 5%;
     color: #8B7575;
+    text-align: center;
 }
 .FormularioEnviar{
     background-color: #0077FF;
