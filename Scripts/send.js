@@ -30,23 +30,26 @@ function send() {
     var mensaje = document.getElementById('Mensaje').value;
     var archivos = document.getElementById('Archivos').files[0];
     http.open("POST", url, true);
-    http.timeout = 1000;
-    http.ontimeout = function (){
-        timeoutReached = true;
-        document.getElementById("ImagenEncabezado").style.display = "none";
-        document.getElementById("Formulario").style.display = "none";
-        document.getElementById("EnvioFallo").style.display = "block";
-    };
+    
 
-    http.onreadystatechange = function () {
+    http.onload = function () {
         console.log(http.readyState);
         // COMPLETED 
-        if (http.readyState == 4 && timeoutReached == false) {
+            console.log("completed");
             document.getElementById("loaderContainer").style.display = "none";
             document.getElementById("Success").style.display = "block";
             document.getElementById("BotonVolver").style.display = "block";
-        }
     }
+
+    http.timeout = 120000;
+    http.ontimeout = function (){
+        console.log("timeout");
+        timeoutReached = true;
+        document.getElementById("ImagenEncabezado").style.display = "none";
+        document.getElementById("loaderContainer").style.display = "none";
+        document.getElementById("Formulario").style.display = "none";
+        document.getElementById("EnvioFallo").style.display = "block";
+    };
     form = new FormData();
     let x = JSON.stringify({
         "name": nombre,
