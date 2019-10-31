@@ -2,14 +2,23 @@ function showFormOnly() {
     document.getElementById("ImagenEncabezado").style.display = "block";
     document.getElementById("Formulario").style.display = "block";
     document.getElementById("ElementosEnvio").style.display = "none";
+    document.getElementById("EnvioFallo").style.display = "none";
+    document.getElementById("Success").style.display = "none";
+    document.getElementById("loaderContainer").style.display = "none";
+}
+
+function VolverHomePage(){
+    location.reload(true);
+    showFormOnly();
 }
 
 function send() {
+    var timeoutReached = false;
 
     document.getElementById("ImagenEncabezado").style.display = "none";
     document.getElementById("Formulario").style.display = "none";
     document.getElementById("ElementosEnvio").style.display = "block";
-    document.getElementById("myDiv").style.display = "none";
+    document.getElementById("Success").style.display = "none";
     document.getElementById("loaderContainer").style.display = "block";
     
     var http = new XMLHttpRequest();
@@ -21,13 +30,21 @@ function send() {
     var mensaje = document.getElementById('Mensaje').value;
     var archivos = document.getElementById('Archivos').files[0];
     http.open("POST", url, true);
+    http.timeout = 1000;
+    http.ontimeout = function (){
+        timeoutReached = true;
+        document.getElementById("ImagenEncabezado").style.display = "none";
+        document.getElementById("Formulario").style.display = "none";
+        document.getElementById("EnvioFallo").style.display = "block";
+    };
 
     http.onreadystatechange = function () {
         console.log(http.readyState);
         // COMPLETED 
-        if (http.readyState == 4) {
+        if (http.readyState == 4 && timeoutReached == false) {
             document.getElementById("loaderContainer").style.display = "none";
-            document.getElementById("myDiv").style.display = "block";
+            document.getElementById("Success").style.display = "block";
+            document.getElementById("BotonVolver").style.display = "block";
         }
     }
     form = new FormData();

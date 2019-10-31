@@ -2,14 +2,14 @@
 html{
     font-family: 'Montserrat', sans-serif;
 }
-#loaderContainer, #myDiv{
+#loaderContainer, #Success, #EnvioFallo{
     margin: auto; 
-    margin-top: 40%;
+    margin-top: 30%;
     width: 300px;
     height: 300px;
     text-align: center;
 }
-.Success{
+.Success {
     
     margin:  20px 60px 0px 60px;
     width: 180px; 
@@ -19,9 +19,9 @@ html{
     margin:  20px 50px 40px 70px;
     width: 120px;
     height: 120px;
-    border: 15px solid #f3f3f3;
+    border: 10px solid #f3f3f3;
     border-radius: 50%;
-    border-top: 16px solid #3498db;
+    border-top: 10px solid #3498db;
     -webkit-animation: spin 5s linear infinite;
     animation: spin 1s linear infinite;
   }
@@ -45,4 +45,9 @@ html{
   #myDiv {
     display: none;
     text-align: center;
+  }
+
+  #BotonVolver{
+    display: none;
+    margin-top: 25%;
   }

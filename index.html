@@ -38,21 +38,34 @@
     </section>
 
     <section id="ElementosEnvio" onload="myFunction()">
-       
+
         <div id="loaderContainer">
             <div id="loader">
             </div>
             <h1 class="EnviandoText">Enviando...</h1>
         </div>
 
-        <div style="display:none;" id="myDiv" class="animate-bottom">
+        <div style="display:none;" id="Success" class="animate-bottom">
             <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
             <lottie-player class="Success"
                 src="https://assets3.lottiefiles.com/datafiles/8UjWgBkqvEF5jNoFcXV4sdJ6PXpS6DwF7cK4tzpi/Check Mark Success/Check Mark Success Data.json"
                 background="transparent" speed="0.75" autoplay>
             </lottie-player>
             <h1 class="EnviandoText">Reporte Enviado!</h1>
+            <p>En breve recibira un mail y/o SMS/Whatsapp con el numero de Reclamo y el link para seguimiento.</p>
+            <p>De no recibir el mensaje, revise sus datos y reenvie el Formulario. <br> Gracias!</p>
         </div>
+        <input class="FormularioEnviar" id="BotonVolver" onclick="VolverHomePage()" type="button"
+            value="Reportar otro Error">
+    </section>
+    <section id="EnvioFallo">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player class="Success" src="https://assets4.lottiefiles.com/temp/lf20_QrtGro.json" background="transparent" speed="0.75"
+            style="width: 180px; height: 180;" autoplay>
+        </lottie-player>
+        <h1 class="EnviandoText">Tiempo de Espera Excedido. <br> Por Favor Reintente Enviar. </h1>
+        <input class="FormularioEnviar" id="BotonReenviar" onclick="showFormOnly()" type="button"
+            value="Reenviar Formulario">
     </section>
 
 
